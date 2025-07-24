@@ -60,3 +60,5 @@ config.py
 
 # Render
 .render/ 
+.pre-commit-config.yaml
+trufflehog/
