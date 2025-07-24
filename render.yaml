@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: shopping-assistant-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT shopping_api:app
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.9.16
+    healthCheckPath: /api/health 
